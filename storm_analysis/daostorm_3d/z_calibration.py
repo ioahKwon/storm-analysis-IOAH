@@ -241,6 +241,11 @@ def plotFit(wx, wy, z, t_wx, t_wy, t_z, wx_params, wy_params, z_min, z_max, z_st
     z - Numpy array with z values in microns.
     wx_params - Parameters for wx versus z fit.
     wy_params - Parameters for wy versus z fit.
+    z_min - minimum z range (when fitting)
+          - This is basically same parameter with the one you set when you set fitting parameters. see "min_z" parameter.
+    z_max - maximum z range (when fitting)
+          - This is basically same parameter with the one you set when you set fitting parameters. see "max_z" parameter.
+    z_step - sampling size.
     
     """
     storm_analysis.configureMatplotlib()
