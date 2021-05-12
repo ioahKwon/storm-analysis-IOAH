@@ -1,8 +1,6 @@
 # storm-analysis-IOAH
 STORM movie analysis code by IOAH.
 
-This codes are modified and managed by IOAH, SNU GSCST.
-
 Special thanks to @[Zhuang lab](http://zhuang.harvard.edu/) for the original code.
 
 ## ##
