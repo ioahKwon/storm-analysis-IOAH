@@ -234,13 +234,14 @@ def loadWxWyZData(h5_name, zfile_name, wx_wy_fields = ["xsigma", "ysigma"], stag
     return [wx, wy, z, pixel_size]
 
 
-def plotFit(wx, wy, z, t_wx, t_wy, t_z, wx_params, wy_params, z_range = 0.6):
+def plotFit(wx, wy, z, t_wx, t_wy, t_z, wx_params, wy_params, z_min, z_max, z_step):
     """
     wx - Numpy array with widths in x in pixels.
     wy - Numpy array with widths in y in pixels.
     z - Numpy array with z values in microns.
     wx_params - Parameters for wx versus z fit.
     wy_params - Parameters for wy versus z fit.
+    
     """
     storm_analysis.configureMatplotlib()
 
@@ -248,7 +249,7 @@ def plotFit(wx, wy, z, t_wx, t_wy, t_z, wx_params, wy_params, z_range = 0.6):
     pz = z + numpy.random.normal(scale = 0.003, size = z.size)
     t_pz = t_z + numpy.random.normal(scale = 0.003, size = t_z.size)
     
-    z_fit = numpy.arange(-z_range, z_range + 0.001, 0.01)
+    z_fit = numpy.arange(z_min, z_max, z_step)
 
     zfn = zcalib_fitters[len(wx_params) - 3]
     wx_fit = zfn(wx_params, z_fit)
